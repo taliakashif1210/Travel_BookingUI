@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Destination Detail</title>
+  <link rel="stylesheet" href="../style2.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+</head>
+<body>
+    <!-- Navbar placeholder -->
+  <div id="navbar"></div>
+ 
+  <div id="destination-detail"></div>
+
+  <script>
+    // Dummy data
+    const destinations = {
+      paris: {
+        name: "Paris",
+        image: "../assets/paris.jpg",
+        gallery: [
+          "../assets/paris1.jpg",
+          "../assets/paris2.jpg",
+          "../assets/paris3.jpg"
+        ],
+        description: "Experience the romance of Paris with iconic landmarks and timeless charm. Stroll through charming streets, savor fine cuisine, and admire world-famous art.  "
+      },
+      newyork: {
+        name: "New York",
+        image: "../assets/newyork.jpeg",
+        gallery: [
+          "../assets/newyork1.jpg",
+          "../assets/newyork2.jpg",
+          "../assets/newyork3.jpg"
+        ],
+        description: "A luxury stay in the heart of New York with modern interiors and premium comfort. Explore the city’s vibrant culture, landmarks, and endless attractions just steps away."
+      },
+      istanbul: {
+        name: "Istanbul",
+        image: "../assets/istanbul.jpg",
+        gallery: [
+          "../assets/istanbul1.jpg",
+          "../assets/istanbul2.jpg",
+          "../assets/istanbul3.jpg"
+        ],
+        description: "TExperience Istanbul, where East meets West in a blend of history and culture. Marvel at ancient mosques, bazaars, and a vibrant food scene.  "
+      },
+      maldives: {
+        name: "Maldives",
+        image: "../assets/maldives.jpg",
+        gallery: [
+          "../assets/maldives1.jpg",
+          "../assets/maldives2.jpg",
+          "../assets/maldives3.jpg"
+        ],
+        description: "Relax in the Maldives, a tropical paradise with crystal-clear waters. Enjoy white sandy beaches and vibrant marine life for an unforgettable escape."
+      },
+      sanfrancisco: {
+        name: "San Francisco",
+        image: "../assets/sanfrancisco.jpg",
+         gallery: [
+          "../assets/sanfrancisco1.jpg",
+          "../assets/sanfrancisco2.jpg",
+          "../assets/sanfrancisco3.jpg"
+        ],
+        description: "Visit San Francisco, home to the Golden Gate Bridge and rolling hills. Enjoy diverse neighborhoods, waterfront views, and cultural landmarks.  "
+      },
+      dubai: {
+        name: "Dubai",
+        image: "../assets/dubai.jpg",
+        gallery: [
+          "../assets/dubai1.jpg",
+          "../assets/dubai2.jpg",
+          "../assets/dubai3.jpg"
+        ],
+        description: "Experience Dubai, a city of iconic skyscrapers and luxury shopping. Discover desert adventures, world-class dining, and vibrant nightlife.  "
+      }
+    };
+
+    // Get the query param ?id=paris
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+
+    // Load destination data
+    const dest = destinations[id];
+    if (dest) {
+      // Generate thumbnails from gallery
+      const thumbnails = dest.gallery
+        .map(img => `<img src="${img}" alt="${dest.name} thumbnail" class="thumbnail">`)
+        .join("");
+
+      document.getElementById("destination-detail").innerHTML = `
+        <div class="destination-container">
+          <!-- LEFT COLUMN: Form -->
+          <div class="destination-info">
+
+            <h2>Book Your Trip to ${dest.name} Now</h2>
+            <form class="booking-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter email" required>
+              </div>
+              <div class="form-group">
+                <label for="date">Travel Date</label>
+                <input type="date" id="date" required>
+              </div>
+              <div class="form-group">
+                <label for="travelers">No. of Travelers</label>
+                <input type="number" id="travelers" min="1" required>
+              </div>
+              <button type="submit" class="book-btn">Book Now</button>
+            </form>
+          </div>
+
+          <!-- RIGHT COLUMN: Image -->
+          <div class="destination-image">
+            <img src="${dest.image}" alt="${dest.name}" class="main-image">
+            <div class="thumbnail-row">
+              ${thumbnails}
+            </div>
+          </div>
+        </div>
+      `;
+    // 🔥 Now that HTML exists, attach swap functionality
+    const mainImage = document.querySelector(".main-image");
+    const thumbnailElements = document.querySelectorAll(".thumbnail");
+
+    thumbnailElements.forEach(thumbnail => {
+      thumbnail.addEventListener("click", () => {
+        const tempSrc = mainImage.src;
+        mainImage.src = thumbnail.src;
+        thumbnail.src = tempSrc;
+      });
+    });
+  } else {
+      document.getElementById("destination-detail").innerHTML = `<p>Destination not found.</p>`;
+    }
+  </script>
+
+  <!-- Footer placeholder -->
+  <div id="footer"></div>
+
+  <!-- Load Components -->
+  <script src="../loadComponents.js"></script>
+</body>
+</html>

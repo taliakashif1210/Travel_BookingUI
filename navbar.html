@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav.default {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 50px 12px 0px;
+  background: #f2f2f2;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  position: fixed;
+  top: 0;             /* ensure it stays at the very top */
+  left: 0;
+  z-index: 1000;
+}
+
+/* Logo + Brand */
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 50px;
+}
+
+nav .logo img {
+  height: 40px;
+}
+
+nav .logo .brand {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #333;
+}
+
+/* Desktop Menu */
+nav ul {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  color: inherit;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Hover underline effect */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Right Side Buttons */
+.actions {
+  display: flex;  
+  gap: 15px;
+}
+
+.btn {
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Search Button */
+nav .btn.search {
+  background: transparent;
+  color: black;
+}
+
+/* Login Button */
+.btn.login {
+  background: black;
+  color: white;
+}
+nav.scrolled .btn.login {
+  background: white;
+  color: black;
+  border: 1px solid #333;
+}
+.btn.login:hover {
+  opacity: 0.8;
+}
+    </style>
+  <nav class="default">
+    <div class="logo">
+      <img src="../assets/logo.jpg" alt="Logo" />
+      <span class="brand">Larana Travels</span>
+    </div>
+
+    <!-- Desktop Menu -->
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../pages/destinations.html">Destinations</a></li>
+      <li><a href="../pages/contact.html">Contact</a></li>
+    </ul>
+
+    <!-- Right Side Buttons -->
+    <div class="actions">
+      <button class="btn search">
+      <span class="material-icons">search</span>
+    </button>
+      <button class="btn login">Login</button>
+    </div>
+  </nav>  

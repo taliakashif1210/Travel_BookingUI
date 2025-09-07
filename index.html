@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Booking - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  
+    <!-- Navbar placeholder -->
+  <div id="navbar"></div>
+
+<section class="hero">
+  <div class="hero-content">
+    <p class="tagline">The ultimate Travel Experience</p>
+    <h1>Discover Your Perfect Gateway Destination</h1>
+    <p class="subtitle">
+      Unparalleled travel experiences and seamless bookings await across the globe. <br> Start your journey today.
+    </p>
+
+    <!-- Search Bar -->
+    <form class="search-form">
+      <div class="form-group">
+        <label for="from">From</label>
+        <input type="text" id="from" list="cities" placeholder="Enter city" required />
+        <datalist id="cities">
+          <option value="New York"></option>
+          <option value="Paris"></option>
+          <option value="Maldives"></option>
+          <option value="Dubai"></option>
+          <option value="Istanbul"></option>
+          <option value="San Francisco"></option>
+        </datalist>
+      </div>
+
+      <div class="form-group">
+        <label for="to">To</label>
+        <input type="text" id="to" list="cities" placeholder="Enter city" required />
+        <datalist id="cities">
+          <option value="New York"></option>
+          <option value="Paris"></option>
+          <option value="Maldives"></option>
+          <option value="Dubai"></option>
+          <option value="Istanbul"></option>
+          <option value="San Francisco"></option>
+        </datalist>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" id="date" required />
+      </div>
+
+      <button type="submit" class="btn-search">
+        Search
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- Featured Destinations -->
+<section class="featured-destinations">
+    <h2>Featured Destinations</h2>
+    <div class="card-container">
+
+      <!-- Card 1 -->
+      <div class="destination-card">
+        <div class="card-image">
+          <img src="assets/paris.jpg" alt="Paris">
+        </div>
+        <div class="card-content">
+          <h3> Paris <span class="rating"><i class="fas fa-star"></i> 4.5</span></h3>
+          <p class="description">Experience the romance of Paris with iconic landmarks and timeless charm.</p>
+          <div class="card-footer">
+            <a href="pages/booking.html?id=paris" class="book-btn">Read More
+              <img src="assets/arrowIcon.png" alt="arrow-icon" />
+            </a>  
+            
+          </div>
+        </div>
+      </div>
+
+     <!-- Card 2 -->
+      <div class="destination-card">
+        <div class="card-image">
+          <img src="assets/newyork.jpeg" alt="New York">
+        </div>
+        <div class="card-content">
+          <h3> New York <span class="rating"><i class="fas fa-star"></i> 4.5</span></h3>
+          <p class="description">Discover the vibrant energy of New York, the city that never sleeps.</p>
+          <div class="card-footer">
+            <a href="pages/booking.html?id=newyork" class="book-btn">Read More
+              <img src="assets/arrowIcon.png" alt="arrow-icon" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="destination-card">
+        <div class="card-image">
+          <img src="assets/dubai.jpg" alt="Dubai">
+        </div>
+        <div class="card-content">
+          <h3> Dubai <span class="rating"><i class="fas fa-star"></i> 4.5</span></h3>
+          <p class="description">Explore Dubai’s modern marvels and golden desert landscapes.</p>
+          <div class="card-footer">
+            <a href="pages/booking.html?id=dubai" class="book-btn">Read More
+              <img src="assets/arrowIcon.png" alt="arrow-icon" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="destination-card">
+        <div class="card-image">
+          <img src="assets/maldives.jpg" alt="Maldives">
+        </div>
+        <div class="card-content">
+          <h3> Maldives <span class="rating"><i class="fas fa-star"></i> 4.5</span></h3>
+          <p class="description">Relax in the Maldives, a tropical paradise with crystal-clear waters.</p>
+          <div class="card-footer">
+            <a href="pages/booking.html?id=maldives" class="book-btn">Read More
+              <img src="assets/arrowIcon.png" alt="arrow-icon" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer placeholder -->
+  <div id="footer"></div>
+
+  <!-- Load Components -->
+  <script src="../loadComponents.js"></script>
+
+
+</body>
+</html>
